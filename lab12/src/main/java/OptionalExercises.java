@@ -40,6 +40,12 @@ public class OptionalExercises {
 
     // Main method to demonstrate the exercises
     public static void main(String[] args) {
+        Optional<Optional<Optional<String>>> k = Optional.of(Optional.of(Optional.of("String")));
+
+        Optional<String> p = Optional.of("String");
+        Optional<Optional<String>> l =  p.map(m -> Optional.of(m));
+        Optional<String> q =  p.flatMap(m -> Optional.of(m));
+
         // Q2.1: Combining two Optionals
         Optional<Person> person = Optional.of(new Person("John", 30));
         Optional<Car> car = Optional.of(new Car("Tesla", new Insurance("Tesla Insurance")));
